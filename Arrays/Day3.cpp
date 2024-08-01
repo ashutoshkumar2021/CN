@@ -1,3 +1,5 @@
+//Union of two arrays
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -28,6 +30,9 @@ int main() {
     }
     return 0;
 }
+
+//Intersection of two arrays
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -57,3 +62,36 @@ int main() {
     }
     return 0;
 }
+
+//Unique number in an array
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int ans=0;
+        for(int i=0;i<nums.size();i++){
+            ans=ans^nums[i];
+        }
+        return ans;
+    }
+};
+
+//Two sum/ Pair sum Problem
+
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n=nums.size();
+        vector<int> ans;
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(nums[i]+nums[j]==target){
+                    ans.push_back(i);
+                    ans.push_back(j);
+                }
+            }
+        }
+        return ans;
+    }
+};
